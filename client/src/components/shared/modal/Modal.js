@@ -9,6 +9,7 @@ const Modal = () => {
   const [quantity, setQuantity] = useState(0);
   const [email, setEmail] = useState("");
   const { user } = useSelector((state) => state.auth);
+  // Submit inventory record (blood donation or distribution)
   const handleModalSubmit = async () => {
     try {
       if (!bloodGroup || !quantity) {

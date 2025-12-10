@@ -16,6 +16,7 @@ const Analytics = (props) => {
     "#FF0060",
     "#22A699",
   ];
+  // Fetch blood group analytics data (organization-specific or admin-wide)
   const getBloodGroupData = async () => {
     try {
       const { data } = props.isAdminPage ? await API.get("/analytics/bloodGroups-data") : await API.get("/analytics/adminBloodGroups-data");

@@ -6,6 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 dotenv.config();
 
+// Initialize database connection
 connectDB();
 
 const app = express();
@@ -18,6 +19,7 @@ app.get("/hello", (req, res) => {
   res.json({"msg" : "Hello"});
 })
 
+// Register API route handlers for different modules
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
 app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));

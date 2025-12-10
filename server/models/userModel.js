@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// User schema with role-based validation and conditional required fields
 const userSchema = new mongoose.Schema(
   {
     role: {

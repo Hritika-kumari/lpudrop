@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../../../styles/Layout.css";
 
+// Sidebar navigation menu with role-based menu items
 const Sidebar = () => {
   const { user } = useSelector((state) => state.auth);
 

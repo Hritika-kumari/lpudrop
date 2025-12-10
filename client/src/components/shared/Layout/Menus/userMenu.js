@@ -1,3 +1,4 @@
+// Menu configuration array for sidebar navigation items
 export const userMenu = [
   {
     name: "Inventory",

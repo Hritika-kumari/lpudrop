@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 const ProtectedRoute = ({ children }) => {
   const dispatch = useDispatch();
 
+  // Fetch current user data and validate authentication token
   const getUser = async () => {
     try {
       const { data } = await API.get("/auth/current-user");
@@ -22,6 +23,7 @@ const ProtectedRoute = ({ children }) => {
     getUser();
   });
 
+  // Redirect to login if no authentication token exists
   if (localStorage.getItem("token")) {
     return children;
   } else {

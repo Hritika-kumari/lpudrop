@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const Consumer = () => {
   const { user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
+  // Fetch consumed blood records for the current hospital user
   const getDonars = async () => {
     try {
       const { data } = await API.post("/inventory/get-inventory-hospital", {

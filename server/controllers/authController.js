@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const registerController = async (req, res) => {
   try {
+    // Check if user already exists with the provided email
     const exisitingUser = await userModel.findOne({ email: req.body.email });
     if (exisitingUser) {
       return res.status(200).send({
@@ -11,6 +12,7 @@ const registerController = async (req, res) => {
         message: "User ALready exists",
       });
     }
+    // Hash password before storing in database for security
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashedPassword;

@@ -6,6 +6,7 @@ import Spinner from "../../components/shared/Spinner";
 const Login = () => {
   const { loading, error } = useSelector((state) => state.auth);
 
+  // Display error alert if authentication fails
   if (error) {
     alert(error);
   }

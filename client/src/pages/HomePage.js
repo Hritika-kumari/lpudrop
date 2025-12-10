@@ -12,6 +12,7 @@ const HomePage = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
+  // Fetch all blood inventory records for the current user
   const getBloodRecords = async () => {
     try {
       const { data } = await API.get("/inventory/get-inventory");

@@ -4,6 +4,7 @@ import store from "../redux/store";
 export const handleLogin = (e, email, password, role) => {
   e.preventDefault();
   try {
+    // Validate that all required fields are provided
     if (!role || !email || !password) {
       return alert("Please Privde All Feilds");
     }

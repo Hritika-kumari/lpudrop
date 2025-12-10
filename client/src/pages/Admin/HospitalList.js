@@ -21,6 +21,7 @@ const HospitalList = () => {
     getDonars();
   }, []);
 
+  // Delete hospital record with user confirmation
   const handelDelete = async (id) => {
     try {
       let answer = window.prompt(

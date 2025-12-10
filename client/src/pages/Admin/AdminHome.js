@@ -8,6 +8,7 @@ const AdminHome = () => {
   return (
     <Layout>
       <div className="container">
+        {/* Admin dashboard with analytics overview */}
         <div className="d-felx flex-column mt-4">
           <h1>
             Welcome Admin <i className="text-success">{user?.name}</i>

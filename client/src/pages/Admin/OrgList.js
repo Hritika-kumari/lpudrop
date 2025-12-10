@@ -21,6 +21,7 @@ const OrgList = () => {
     getDonars();
   }, []);
 
+  // Delete organization record with user confirmation
   const handelDelete = async (id) => {
     try {
       let answer = window.prompt(

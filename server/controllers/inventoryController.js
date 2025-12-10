@@ -16,6 +16,7 @@ const createInventoryController = async (req, res) => {
     //   throw new Error("Not a hospital");
     // }
 
+    // Validate available inventory when processing outbound transactions
     if (req.body.inventoryType == "out") {
       const requestedBloodGroup = req.body.bloodGroup;
       const requestedQuantityOfBlood = req.body.quantity;
@@ -53,6 +54,7 @@ const createInventoryController = async (req, res) => {
       ]);
       const totalOut = totalOutOfRequestedBloodGroup[0]?.total || 0;
 
+      // Check if sufficient blood is available before allowing outbound transaction
       const availableQuanityOfBloodGroup = totalIn - totalOut;
       if (availableQuanityOfBloodGroup < requestedQuantityOfBlood) {
         return res.status(500).send({

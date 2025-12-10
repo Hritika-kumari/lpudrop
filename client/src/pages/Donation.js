@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const Donation = () => {
   const { user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
+  // Fetch donation records filtered by current donor user ID
   const getDonars = async () => {
     try {
       const { data } = await API.post("/inventory/get-inventory-hospital", {

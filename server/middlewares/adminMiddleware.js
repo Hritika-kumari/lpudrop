@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 module.exports = async (req, res, next) => {
   try {
+    // Verify that the authenticated user has admin role
     const user = await userModel.findById(req.body.userId);
     if (user?.role !== "admin") {
       return res.status(401).send({

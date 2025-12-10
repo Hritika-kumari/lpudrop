@@ -91,7 +91,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             </label>
           </div>
         </div>
-        {/* switch statement */}
+        {/* Conditionally render form fields based on form type (login/register) */}
         {(() => {
           //eslint-disable-next-line
           switch (true) {

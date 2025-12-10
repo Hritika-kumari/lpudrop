@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Inventory schema tracking blood donations (in) and distributions (out)
 const inventorySchema = new mongoose.Schema(
   {
     inventoryType: {

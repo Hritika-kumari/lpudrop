@@ -19,6 +19,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 function App() {
   return (
     <>
+      {/* Toast notifications container for user feedback */}
       <ToastContainer />
       <Routes>
         <Route
@@ -102,6 +103,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        {/* Default route protected by authentication */}
         <Route
           path="/"
           element={

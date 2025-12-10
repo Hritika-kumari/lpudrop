@@ -10,6 +10,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 const router = express.Router();
 
+// Admin routes protected by both authentication and admin role verification
 router.get(
   "/donar-list",
   authMiddelware,

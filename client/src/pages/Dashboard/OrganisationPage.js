@@ -7,6 +7,7 @@ import API from "../../services/API";
 const OrganisationPage = () => {
   const { user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
+  // Fetch organizations based on user role (donor or hospital)
   const getOrg = async () => {
     try {
       if (user?.role === "donar") {

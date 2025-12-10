@@ -12,6 +12,7 @@ const initialState = {
   error: null,
 };
 
+// Auth slice managing authentication state and async actions
 const authSlice = createSlice({
   name: "auth",
   initialState: initialState,

@@ -6,6 +6,7 @@ import Spinner from "../../components/shared/Spinner";
 const Register = () => {
   const { loading, error } = useSelector((state) => state.auth);
 
+  // Display error alert if registration fails
   if (error) {
     alert(error);
   }

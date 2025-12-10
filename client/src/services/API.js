@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API = axios.create({ baseURL: process.env.REACT_APP_BASEURL });
 
+// Intercept requests to automatically add authentication token from localStorage
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("token")) {
     req.headers.Authorization = `Bearer ${localStorage.getItem("token")} `;

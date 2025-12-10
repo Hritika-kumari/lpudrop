@@ -7,6 +7,7 @@ const {
 
 const router = express.Router();
 
+// Analytics routes for blood group data with authentication required
 router.get("/bloodGroups-data", authMiddelware, bloodGroupDetailsContoller);
 router.get("/adminBloodGroups-data", authMiddelware, adminBloodGroupDetailsContoller);
 

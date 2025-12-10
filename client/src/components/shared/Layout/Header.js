@@ -6,6 +6,7 @@ const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
+  // Clear authentication data and redirect to login page
   const handleLogout = () => {
     localStorage.clear();
     alert("Logout Successfully");

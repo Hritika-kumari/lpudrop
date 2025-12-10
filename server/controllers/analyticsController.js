@@ -2,6 +2,7 @@ const inventoryModel = require("../models/inventoryModel");
 const mongoose = require("mongoose");
 const bloodGroupDetailsContoller = async (req, res) => {
   try {
+    // Define all possible blood groups for analytics calculation
     const bloodGroups = ["O+", "O-", "AB+", "AB-", "A+", "A-", "B+", "B-"];
     const bloodGroupData = [];
     const organisation = new mongoose.Types.ObjectId(req.body.userId);
@@ -38,6 +39,7 @@ const bloodGroupDetailsContoller = async (req, res) => {
             },
           },
         ]);
+        // Calculate available blood by subtracting outbound from inbound inventory
         const availabeBlood =
           (totalIn[0]?.total || 0) - (totalOut[0]?.total || 0);
 

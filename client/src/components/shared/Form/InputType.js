@@ -1,5 +1,6 @@
 import React from "react";
 
+// Reusable input component for form fields
 const InputType = ({
   labelText,
   labelFor,

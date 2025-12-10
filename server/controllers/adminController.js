@@ -2,6 +2,7 @@ const userModel = require("../models/userModel");
 
 const getDonarsListController = async (req, res) => {
   try {
+    // Fetch all donors sorted by creation date (newest first)
     const donarData = await userModel
       .find({ role: "donar" })
       .sort({ createdAt: -1 });
@@ -68,6 +69,7 @@ const getOrgListController = async (req, res) => {
 
 const deleteDonarController = async (req, res) => {
   try {
+    // Delete user record by ID from request parameters
     await userModel.findByIdAndDelete(req.params.id);
     return res.status(200).send({
       success: true,

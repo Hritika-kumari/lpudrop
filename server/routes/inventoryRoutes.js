@@ -13,6 +13,7 @@ const {
 
 const router = express.Router();
 
+// Inventory management routes with authentication middleware
 router.post("/create-inventory", authMiddelware, createInventoryController);
 
 router.get("/get-inventory", authMiddelware, getInventoryController);

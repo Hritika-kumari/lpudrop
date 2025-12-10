@@ -5,6 +5,7 @@ import moment from "moment";
 
 const Donar = () => {
   const [data, setData] = useState([]);
+  // Fetch list of all donors associated with the organization
   const getDonars = async () => {
     try {
       const { data } = await API.get("/inventory/get-donars");
